@@ -46,24 +46,37 @@ def DisplayPuzzle(puzzle):
     for row in display_puzzle:
         print(" ".join(tile.rjust(2) for tile in row))
 
-    
+def GetMoveInput():
+    while True:
+        direction = input("\nEnter your move (up, down, left, right): ").strip().lower()
+        if direction in ["up", "down", "left", "right", "cheat"]:
+            return direction
+        else:
+            print("[ERROR] Invalid move: 'up', 'down', 'left', 'right'.")
 
-
-
-
-puzzle = CreatePuzzle()
-puzzle = ShufflePuzzle(puzzle)
-correct_puzzle = [[1, 2, 3, 4],
-                      [5, 6, 7, 8],
-                      [9, 10, 11, 12],
-                      [13, 14, 15, 0]]
-
-
-while puzzle != correct_puzzle:
+def ClearScreen():
     system("cls")
+
+
+
+
+def main():
+    puzzle = CreatePuzzle()
+    puzzle = ShufflePuzzle(puzzle)
+    correct_puzzle = [[1, 2, 3, 4],
+                        [5, 6, 7, 8],
+                        [9, 10, 11, 12],
+                        [13, 14, 15, 0]]
+    print("\nWelcome to the 15-Puzzle Game!")
+    print("The goal is to arrange the numbers in order, with the empty space (0) in the bottom-right corner.")
+
+    while puzzle != correct_puzzle:
+        ClearScreen()
+        DisplayPuzzle(puzzle)
+        direction = GetMoveInput()
+        puzzle = MovePuzzle(puzzle,direction)
+    
+    ClearScreen()
     DisplayPuzzle(puzzle)
-    direction = input("Enter move (up, down, left, right): ").strip().lower()
-    puzzle = MovePuzzle(puzzle,direction)
+    print("\nCongratulations, you won!")
     
-    
-print("Congratulations, you won!")
