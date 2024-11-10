@@ -60,23 +60,23 @@ def ClearScreen():
 
 
 
-def main():
-    puzzle = CreatePuzzle()
-    puzzle = ShufflePuzzle(puzzle)
-    correct_puzzle = [[1, 2, 3, 4],
-                        [5, 6, 7, 8],
-                        [9, 10, 11, 12],
-                        [13, 14, 15, 0]]
-    print("\nWelcome to the 15-Puzzle Game!")
-    print("The goal is to arrange the numbers in order, with the empty space (0) in the bottom-right corner.")
 
-    while puzzle != correct_puzzle:
-        ClearScreen()
-        DisplayPuzzle(puzzle)
-        direction = GetMoveInput()
-        puzzle = MovePuzzle(puzzle,direction)
-    
+puzzle = CreatePuzzle()
+puzzle = ShufflePuzzle(puzzle)
+correct_puzzle = [[1, 2, 3, 4],
+                    [5, 6, 7, 8],
+                    [9, 10, 11, 12],
+                    [13, 14, 15, 0]]
+print("\nWelcome to the 15-Puzzle Game!")
+print("The goal is to arrange the numbers in order, with the empty space in the bottom-right corner.")
+input("Are you ready?\n")
+
+while puzzle != correct_puzzle:
     ClearScreen()
     DisplayPuzzle(puzzle)
-    print("\nCongratulations, you won!")
-    
+    direction = GetMoveInput()
+    puzzle = MovePuzzle(puzzle,direction)
+
+ClearScreen()
+DisplayPuzzle(puzzle)
+print("\nCongratulations, you won!")
