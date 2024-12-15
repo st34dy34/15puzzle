@@ -23,3 +23,10 @@ A simple terminal-based implementation of the classic **15-puzzle** game. The ob
    - Displays the current puzzle state with easy-to-read formatting.
 
 ---
+![image](https://github.com/user-attachments/assets/add0973a-4067-4fe5-9307-d47ebe1947a5)
+![image](https://github.com/user-attachments/assets/577ef189-61b5-49b4-aa3e-d024e1d554e9)
+
+
+
+
+
