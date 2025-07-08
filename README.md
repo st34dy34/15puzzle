@@ -4,6 +4,8 @@ A simple terminal-based implementation of the classic **15-puzzle** game. The ob
 
 *Module Functions Part 3 - Develop a game of 15 Puzzle*
 
+![image](https://github.com/user-attachments/assets/1994f0cb-258b-4da1-b686-a4b9a817650f)
+
 ---
 
 ## Features
